@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Podcast</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <style>
+      body {
+        font-family: "Montserrat Alternates", sans-serif;
+        font-style: normal;
+        font-size: 10.97px;
+        color: black;
+      }
+      /* text */
+      .bold {
+        font-weight: bold;
+      }
+      .text-black {
+        color: black;
+      }
+      .text-white {
+        color: white;
+      }
+      .text-rustred {
+        color: #cd4631;
+      }
+      .text-skyBlue {
+        color: #81adc8;
+      }
+      h1 {
+        font-size: 65.81px;
+      }
+      h2 {
+        font-size: 40.65px;
+      }
+      .text-sm {
+        font-size: 9.6px;
+      }
+      .text-lg {
+        font-size: 15.53px;
+      }
+      .text-xlg {
+        font-size: 25.13px;
+      }
+      /* borders */
+      .outline {
+        outline: black solid 3px;
+        outline-offset: -3px;
+      }
+      .radius-default {
+        border-radius: 5.48px;
+      }
+      .radius-lg {
+        border-radius: 8.23px;
+      }
+      /* background */
+      .bg-black {
+        background-color: black;
+      }
+      .bg-lbeige {
+        background-color: #f7ede8;
+      }
+      /* btn size */
+      .btn-sm {
+        padding: 8.23px 16.45px;
+      }
+      .btn-md {
+        padding: 13.71px 24.68px;
+      }
+      .btn-lg {
+        padding: 16.45px 32.91px;
+      }
+      /* shadow */
+      .shadow {
+        box-shadow: 4.11341px 4.11341px 0px rgba(0, 0, 0, 0.25);
+      }
+      /* nav start */
+      nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 1;
+      }
+      nav .container {
+        padding: 16px 96px;
+      }
+      .logo-spacing {
+        padding-right: 84.33px;
+      }
+      .link-group {
+        gap: 41.13px;
+      }
+      .link-group-btn {
+        gap: 13.71px;
+      }
+      /* hero start */
+      section.hero .banner {
+        padding-top: 100px;
+        width: 500px;
+        z-index: 1;
+      }
+      section.hero .springNstar {
+        top: 100px;
+        left: -110px;
+        transform: rotate(360deg);
+      }
+      section.hero .star {
+        top: 143px;
+        right: -20px;
+      }
+      section.hero .star-group {
+        top: 161.11px;
+        right: 40px;
+      }
+      section.hero .header {
+        line-height: 65px;
+      }
+      section.hero p {
+        width: 210px;
+        margin-top: 27.05px;
+        margin-bottom: 40.78px;
+        line-height: 160%;
+      }
+      section.hero #episodes {
+        margin-top: 81.92px;
+        gap: 13.71px;
+      }
+      section.hero #episodes .title {
+        left: 13.71px;
+        bottom: 13.88px;
+      }
+      section.hero #episodes .platforms {
+        top: 13.71px;
+        right: 13.28px;
+        gap: 6.86px;
+      }
+      section.hero .supports-con {
+        margin-top: 82.27px;
+        margin-bottom: 95.98px;
+        padding: 31.51px 0;
+      }
+      section.hero .supports-con .container {
+        gap: 90px;
+      }
+      section.hero .supports-con .container::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 0.5px;
+        width: 100%;
+        background-color: black;
+      }
+      section.hero .supports-con .container::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 0.5px;
+        width: 100%;
+        background-color: black;
+      }
+      section.hero .platform {
+        padding: 0 51.76px;
+        column-gap: 92px;
+        row-gap: 20px;
+      }
+
+      @media screen and (max-width: 425px) {
+        nav .container {
+          padding: 16px 5px;
+        }
+
+        section.hero .banner {
+          width: 100%;
+        }
+        section.hero .header,
+        section.hero p {
+          text-shadow: -1px -1px 0px #f7ede8;
+        }
+
+        section.hero .supports-con .container {
+          margin: 82.27px 20px 95.98px;
+          gap: 0;
+        }
+        section.hero .platform {
+          padding: 5px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="container flex ai-center">
+        <div class="logo-spacing">
+          <img src="./assets/podcast-logo.png" alt="logo" />
+        </div>
+
+        <div class="flex ai-center w-100">
+          <div class="flex link-group text-md bold">
+            <a href="#">
+              <div class="text-black">Episodes</div>
+            </a>
+            <a href="#">
+              <div class="text-black">About</div>
+            </a>
+            <a href="#">
+              <div class="text-black">More</div>
+            </a>
+          </div>
+
+          <div class="ml-auto flex link-group-btn text-sm bold">
+            <a href="#">
+              <div class="btn-sm outline radius-default text-black">
+                Recent Episodes
+              </div>
+            </a>
+
+            <a href="#">
+              <div class="btn-sm bg-black radius-default text-white">
+                Subscribe
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section
+      class="hero relative bg-lbeige flex flex-column ai-center jc-center overflow-hidden w-100"
+    >
+      <!-- spring and star -->
+      <div class="absolute springNstar">
+        <svg
+          class="spring"
+          width="326"
+          height="311"
+          viewBox="0 0 326 311"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M53.1622 3.55416C53.1622 35.4373 65.4922 89.1988 18.9321 147.316C-26.5457 204.083 36.0194 24.3291 98.8545 13.2034C172.305 0.198037 45.7212 301.331 39.1942 240.047C35.5426 205.761 141.787 25.7998 171.672 55.6848C209.689 93.7022 110 310.854 86.7228 307.282C45.6579 300.982 192.528 51.198 234.202 72.7109C283.895 98.3637 201.987 269.554 163.98 278.736C133.574 286.082 246.978 120.179 322.865 158.149"
+            stroke="black"
+            stroke-width="5.48455"
+            stroke-linecap="round"
+          />
+        </svg>
+        <svg
+          class="absolute star"
+          width="37"
+          height="35"
+          viewBox="0 0 37 35"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M20.8884 0.797057C21.6295 -0.529281 23.6571 0.155175 23.4427 1.65933L23.0478 4.43044C22.9192 5.33288 23.6907 6.10724 24.5936 5.98203L35.367 4.48799C36.8205 4.28642 37.5321 6.20079 36.2998 6.99754L28.2943 12.1738C27.3656 12.7743 27.4933 14.1706 28.5155 14.5926L33.9654 16.8426C35.2182 17.3598 35.041 19.1873 33.7122 19.4542L30.1454 20.1708C29.3396 20.3327 28.8563 21.1622 29.1128 21.9431L30.1249 25.0238C30.5117 26.201 29.2623 27.2467 28.1716 26.6586L23.8224 24.3138C22.7064 23.7122 21.4417 24.8175 21.8885 26.004L24.2807 32.3562C24.7996 33.7343 23.0774 34.8499 22.0319 33.813L15.2699 27.106C14.8339 26.6736 14.1636 26.5837 13.6291 26.8861L6.00622 31.1987C4.73597 31.9174 3.37149 30.4177 4.20655 29.2208L8.69604 22.7859C9.1068 22.1972 8.99389 21.3912 8.43715 20.938L0.609769 14.5662C-0.390876 13.7516 0.185109 12.1317 1.47538 12.1317H7.50564C8.1873 12.1317 8.76545 11.631 8.86274 10.9563L9.80813 4.40049C10.0126 2.9825 11.9808 2.78861 12.4581 4.13945L13.9898 8.47515C14.3828 9.58762 15.9041 9.7172 16.4796 8.68723L20.8884 0.797057Z"
+            fill="#CD4631"
+          />
+        </svg>
+      </div>
+
+      <div class="banner flex flex-column ai-center">
+        <div class="header text-center bold">
+          <h1>Your Daily <span class="text-rustred">Podcast</span></h1>
+        </div>
+        <p class="text-center">
+          We cover all kinds of categories and a weekly special guest
+        </p>
+        <a href="#">
+          <div
+            class="btn-lg bg-black radius-default text-sm text-white bold shadow"
+          >
+            SUBSCRIBE
+          </div>
+        </a>
+      </div>
+
+      <!-- stars -->
+      <div class="absolute star-group">
+        <svg
+          width="26"
+          height="27"
+          viewBox="0 0 26 27"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M9.21911 11.4669C10.2373 10.5838 11.0635 9.58059 11.745 8.50533C11.9734 10.8006 13.6644 12.1864 15.2797 13.0124C14.898 13.2771 14.5432 13.5974 14.2587 13.9743C14.2424 13.9939 14.2258 14.0136 14.2091 14.0336C13.5747 14.7922 12.6608 15.8851 12.2157 17.1874C11.9751 17.8721 11.7544 18.5768 11.5471 19.2826C10.9088 17.8573 9.84566 16.6301 8.3234 15.6756C8.19344 15.5934 8.06077 15.5087 7.92525 15.4222C7.12142 14.9092 6.21739 14.3321 5.1826 13.8413C6.74368 13.2544 8.07922 12.4555 9.21911 11.4669Z"
+            stroke="black"
+            stroke-width="4.11341"
+          />
+        </svg>
+        <svg
+          width="26"
+          height="27"
+          viewBox="0 0 26 27"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M9.21911 11.4669C10.2373 10.5838 11.0635 9.58059 11.745 8.50533C11.9734 10.8006 13.6644 12.1864 15.2797 13.0124C14.898 13.2771 14.5432 13.5974 14.2587 13.9743C14.2424 13.9939 14.2258 14.0136 14.2091 14.0336C13.5747 14.7922 12.6608 15.8851 12.2157 17.1874C11.9751 17.8721 11.7544 18.5768 11.5471 19.2826C10.9088 17.8573 9.84566 16.6301 8.3234 15.6756C8.19344 15.5934 8.06077 15.5087 7.92525 15.4222C7.12142 14.9092 6.21739 14.3321 5.1826 13.8413C6.74368 13.2544 8.07922 12.4555 9.21911 11.4669Z"
+            stroke="black"
+            stroke-width="4.11341"
+          />
+        </svg>
+        <svg
+          width="26"
+          height="27"
+          viewBox="0 0 26 27"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M9.21911 11.4669C10.2373 10.5838 11.0635 9.58059 11.745 8.50533C11.9734 10.8006 13.6644 12.1864 15.2797 13.0124C14.898 13.2771 14.5432 13.5974 14.2587 13.9743C14.2424 13.9939 14.2258 14.0136 14.2091 14.0336C13.5747 14.7922 12.6608 15.8851 12.2157 17.1874C11.9751 17.8721 11.7544 18.5768 11.5471 19.2826C10.9088 17.8573 9.84566 16.6301 8.3234 15.6756C8.19344 15.5934 8.06077 15.5087 7.92525 15.4222C7.12142 14.9092 6.21739 14.3321 5.1826 13.8413C6.74368 13.2544 8.07922 12.4555 9.21911 11.4669Z"
+            stroke="black"
+            stroke-width="4.11341"
+          />
+        </svg>
+      </div>
+
+      <div id="episodes" class="flex"></div>
+
+      <div class="supports-con relative flex jc-center">
+        <div class="container flex ai-center">
+          <div class="text-lg bold text-nowrap">Supported by:</div>
+          <div class="platform flex wrap jc-center">
+            <img src="./assets/support-spotify.png" alt="spotify" />
+            <img
+              src="./assets/support-google-podcast.png"
+              alt="google podcast"
+            />
+            <img src="./assets/support-youtube.png" alt="youtube" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+
+  <script src="./podcast.js"></script>
+  <script>
+    function createComponent(data) {
+      const container = document.getElementById("episodes");
+
+      const component = document.createElement("div");
+      component.classList.add("relative", "radius-lg", "overflow-hidden");
+
+      const image = document.createElement("img");
+      image.src = data.imgUrl;
+      image.alt = data.title;
+
+      const title = document.createElement("div");
+      title.classList.add(
+        "absolute",
+        "title",
+        "text-xlg",
+        "bold",
+        "text-skyBlue"
+      );
+      title.textContent = data.title;
+
+      const linkContainer = document.createElement("div");
+      linkContainer.classList.add("absolute", "flex", "platforms");
+
+      const platforms = ["spotify", "google-podcast", "youtube"];
+      platforms.forEach((platform) => {
+        const link = createPlatformLink(platform);
+        linkContainer.appendChild(link);
+      });
+
+      component.appendChild(image);
+      component.appendChild(title);
+      component.appendChild(linkContainer);
+
+      container.appendChild(component);
+    }
+
+    function createPlatformLink(platform) {
+      const link = document.createElement("a");
+      link.href = "#";
+
+      const platformImg = document.createElement("img");
+      platformImg.src = `./assets/platform-${platform}.png`;
+      platformImg.alt = platform;
+
+      link.appendChild(platformImg);
+      return link;
+    }
+
+    jsonData.forEach((data) => {
+      createComponent(data);
+    });
+  </script>
+</html>
