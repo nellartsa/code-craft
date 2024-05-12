@@ -60,12 +60,22 @@
       .radius-lg {
         border-radius: 8.23px;
       }
+      .radius-full {
+        border-radius: 100%;
+      }
       /* background */
       .bg-black {
         background-color: black;
       }
       .bg-lbeige {
         background-color: #f7ede8;
+      }
+      .bg-lgray {
+        background-color: #edf3f7;
+      }
+      /* container */
+      .container {
+        /* padding: 0 20px; */
       }
       /* btn size */
       .btn-sm {
@@ -103,8 +113,11 @@
         gap: 13.71px;
       }
       /* hero start */
-      section.hero .banner {
-        padding-top: 100px;
+      section.hero {
+        padding: 100px 0 95.98px 0;
+      }
+      section.hero .header {
+        padding: 0 20px;
         width: 500px;
         z-index: 1;
       }
@@ -121,37 +134,33 @@
         top: 161.11px;
         right: 40px;
       }
-      section.hero .header {
+      section.hero h1 {
         line-height: 65px;
+        margin-bottom: 27.05px;
       }
       section.hero p {
         width: 210px;
-        margin-top: 27.05px;
         margin-bottom: 40.78px;
         line-height: 160%;
       }
-      section.hero #episodes {
+      section.hero #covers {
         margin-top: 81.92px;
         gap: 13.71px;
       }
-      section.hero #episodes .title {
+      section.hero #covers .title {
         left: 13.71px;
         bottom: 13.88px;
       }
-      section.hero #episodes .platforms {
+      section.hero #covers .platforms {
         top: 13.71px;
         right: 13.28px;
         gap: 6.86px;
       }
       section.hero .supports-con {
         margin-top: 82.27px;
-        margin-bottom: 95.98px;
         padding: 31.51px 0;
       }
-      section.hero .supports-con .container {
-        gap: 90px;
-      }
-      section.hero .supports-con .container::after {
+      section.hero .supports-con::after {
         content: "";
         position: absolute;
         left: 0;
@@ -160,7 +169,7 @@
         width: 100%;
         background-color: black;
       }
-      section.hero .supports-con .container::before {
+      section.hero .supports-con::before {
         content: "";
         position: absolute;
         left: 0;
@@ -172,28 +181,61 @@
       section.hero .platform {
         padding: 0 51.76px;
         column-gap: 92px;
-        row-gap: 20px;
+        row-gap: 10px;
       }
-
+      /* quotes start */
+      section.about {
+        padding: 95.98px 0;
+      }
+      section.about h2 {
+        width: 550px;
+        padding-bottom: 67.91px;
+      }
+      section.about .h-content {
+        width: 90%;
+        margin-bottom: 81.92px;
+        gap: 20px 0;
+      }
+      section.about .h-content > :nth-child(n) {
+        width: 340px;
+      }
+      section.about .h-content img {
+        padding-bottom: 27.42px;
+      }
+      section.about .quote {
+        width: 80%;
+        padding: 27.42px 30px;
+      }
+      section.about .quote-by {
+        margin-top: 27.35px;
+        gap: 9px;
+      }
+      /* testimonials start */
+      section.testimonials {
+        padding: 95.98px 0 68.56px 0;
+      }
+      section.testimonials .h-content h2 {
+        margin-bottom: 13.71px;
+      }
       @media screen and (max-width: 425px) {
-        nav .container {
-          padding: 16px 5px;
+        .container {
+          padding: 0 20px;
         }
-
-        section.hero .banner {
+        section.hero .header {
           width: 100%;
         }
-        section.hero .header,
-        section.hero p {
-          text-shadow: -1px -1px 0px #f7ede8;
+        section.hero .bg-blur {
+          backdrop-filter: blur(2px);
         }
-
-        section.hero .supports-con .container {
-          margin: 82.27px 20px 95.98px;
-          gap: 0;
+        section.hero .supports-con {
+          flex-wrap: wrap;
+          gap: 15px 0;
         }
-        section.hero .platform {
-          padding: 5px;
+        section.about h2 {
+          width: 100%;
+        }
+        section.about .quote {
+          width: 100%;
         }
       }
     </style>
@@ -238,7 +280,6 @@
     <section
       class="hero relative bg-lbeige flex flex-column ai-center jc-center overflow-hidden w-100"
     >
-      <!-- spring and star -->
       <div class="absolute springNstar">
         <svg
           class="spring"
@@ -270,23 +311,26 @@
         </svg>
       </div>
 
-      <div class="banner flex flex-column ai-center">
-        <div class="header text-center bold">
-          <h1>Your Daily <span class="text-rustred">Podcast</span></h1>
-        </div>
-        <p class="text-center">
-          We cover all kinds of categories and a weekly special guest
-        </p>
-        <a href="#">
-          <div
-            class="btn-lg bg-black radius-default text-sm text-white bold shadow"
-          >
-            SUBSCRIBE
+      <div class="header">
+        <div class="bg-blur">
+          <div class="flex flex-column ai-center">
+            <h1 class="text-center bold">
+              Your Daily <span class="text-rustred">Podcast</span>
+            </h1>
+            <p class="text-center">
+              We cover all kinds of categories and a weekly special guest
+            </p>
+            <a href="#">
+              <div
+                class="btn-lg bg-black radius-default text-sm text-white bold shadow"
+              >
+                SUBSCRIBE
+              </div>
+            </a>
           </div>
-        </a>
+        </div>
       </div>
 
-      <!-- stars -->
       <div class="absolute star-group">
         <svg
           width="26"
@@ -329,10 +373,10 @@
         </svg>
       </div>
 
-      <div id="episodes" class="flex"></div>
+      <div id="covers" class="flex"></div>
 
-      <div class="supports-con relative flex jc-center">
-        <div class="container flex ai-center">
+      <div class="container">
+        <div class="supports-con relative flex ai-center jc-center">
           <div class="text-lg bold text-nowrap">Supported by:</div>
           <div class="platform flex wrap jc-center">
             <img src="./assets/support-spotify.png" alt="spotify" />
@@ -345,12 +389,102 @@
         </div>
       </div>
     </section>
+
+    <section class="about">
+      <div class="container flex flex-column ai-center">
+        <h2 class="text-center">
+          Talk. Listen. Get inspired by every minute of it.
+        </h2>
+
+        <div class="h-content flex wrap ai-center jc-space-evenly">
+          <div class="text-center">
+            <img src="./assets/illus-1.png" alt="illus 1" />
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+              ac ultrices odio.
+            </p>
+          </div>
+
+          <div class="text-center">
+            <img src="./assets/illus-2.png" alt="illus 2" />
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+              ac ultrices odio.
+            </p>
+          </div>
+        </div>
+
+        <div class="quote relative bg-lbeige text-center">
+          <div class="absolute spring">
+            <svg
+              width="326"
+              height="311"
+              viewBox="0 0 326 311"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M53.1622 3.55416C53.1622 35.4373 65.4922 89.1988 18.9321 147.316C-26.5457 204.083 36.0194 24.3291 98.8545 13.2034C172.305 0.198037 45.7212 301.331 39.1942 240.047C35.5426 205.761 141.787 25.7998 171.672 55.6848C209.689 93.7022 110 310.854 86.7228 307.282C45.6579 300.982 192.528 51.198 234.202 72.7109C283.895 98.3637 201.987 269.554 163.98 278.736C133.574 286.082 246.978 120.179 322.865 158.149"
+                stroke="black"
+                stroke-width="5.48455"
+                stroke-linecap="round"
+              />
+            </svg>
+          </div>
+
+          <h1 class="text-rustred">“</h1>
+          <div class="text-xlg bold">
+            One of the best daily podcasts that covers every topic on Spotify.
+          </div>
+          <div class="quote-by flex ai-center jc-center">
+            <img
+              class="radius-full"
+              src="./assets/quote-avatar.png"
+              alt="john smith"
+            />
+            <div class="flex ai-center text-sm">
+              John Smith,&nbsp;
+              <img src="./assets/only-spot.png" alt="spotify logo" />&nbsp;
+              <span class="bold">Social Community Manager</span>
+            </div>
+          </div>
+
+          <div class="absolute star">
+            <svg
+              width="37"
+              height="35"
+              viewBox="0 0 37 35"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20.8884 0.797057C21.6295 -0.529281 23.6571 0.155175 23.4427 1.65933L23.0478 4.43044C22.9192 5.33288 23.6907 6.10724 24.5936 5.98203L35.367 4.48799C36.8205 4.28642 37.5321 6.20079 36.2998 6.99754L28.2943 12.1738C27.3656 12.7743 27.4933 14.1706 28.5155 14.5926L33.9654 16.8426C35.2182 17.3598 35.041 19.1873 33.7122 19.4542L30.1454 20.1708C29.3396 20.3327 28.8563 21.1622 29.1128 21.9431L30.1249 25.0238C30.5117 26.201 29.2623 27.2467 28.1716 26.6586L23.8224 24.3138C22.7064 23.7122 21.4417 24.8175 21.8885 26.004L24.2807 32.3562C24.7996 33.7343 23.0774 34.8499 22.0319 33.813L15.2699 27.106C14.8339 26.6736 14.1636 26.5837 13.6291 26.8861L6.00622 31.1987C4.73597 31.9174 3.37149 30.4177 4.20655 29.2208L8.69604 22.7859C9.1068 22.1972 8.99389 21.3912 8.43715 20.938L0.609769 14.5662C-0.390876 13.7516 0.185109 12.1317 1.47538 12.1317H7.50564C8.1873 12.1317 8.76545 11.631 8.86274 10.9563L9.80813 4.40049C10.0126 2.9825 11.9808 2.78861 12.4581 4.13945L13.9898 8.47515C14.3828 9.58762 15.9041 9.7172 16.4796 8.68723L20.8884 0.797057Z"
+                fill="#CD4631"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials bg-lgray">
+      <div class="container">
+        <div class="relative h-content text-center">
+          <h2>What our listeners say</h2>
+          <p>Their experience throughout every platform</p>
+        </div>
+
+        <div id="reviewers"></div>
+      </div>
+    </section>
+
+    <section class="features"></section>
   </body>
 
   <script src="./podcast.js"></script>
   <script>
     function createComponent(data) {
-      const container = document.getElementById("episodes");
+      const container = document.getElementById("covers");
 
       const component = document.createElement("div");
       component.classList.add("relative", "radius-lg", "overflow-hidden");
@@ -397,7 +531,7 @@
       return link;
     }
 
-    jsonData.forEach((data) => {
+    covers.forEach((data) => {
       createComponent(data);
     });
   </script>
