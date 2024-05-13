@@ -47,6 +47,9 @@
       h2 {
         font-size: 40.65px;
       }
+      .text-xsm {
+        font-size: 8.23px;
+      }
       .text-sm {
         font-size: 9.6px;
       }
@@ -60,6 +63,9 @@
       .outline {
         outline: black solid 3px;
         outline-offset: -3px;
+      }
+      .radius-sm {
+        border-radius: 2.74px;
       }
       .radius-default {
         border-radius: 5.48px;
@@ -79,6 +85,9 @@
       }
       .bg-lgray {
         background-color: #edf3f7;
+      }
+      .bg-rustred {
+        background-color: #cd4631;
       }
       /* container */
       .container {
@@ -105,7 +114,6 @@
         left: 0;
         right: 0;
         width: 100%;
-        z-index: 1;
       }
       nav .container {
         padding: 16px 96px;
@@ -126,7 +134,6 @@
       section.hero .header {
         padding: 0 20px;
         width: 500px;
-        z-index: 1;
       }
       section.hero .springNstar {
         top: 100px;
@@ -217,8 +224,12 @@
         margin-top: 27.35px;
         gap: 9px;
       }
-      /* testimonials, features, episodes,  */
+      /* section mixes  */
       section.testimonials .h-content,
+      section.episodes,
+      section.articles {
+        padding: 95.98px 0 96.06px;
+      }
       section.features .h-content,
       section.episodes .h-content,
       section.sponsor .h-content,
@@ -289,14 +300,41 @@
         margin-bottom: 6.86px;
       }
       /* episode start */
-      section.episodes {
-        padding: 95.98px 0 96.06px;
-      }
       /* sponsor start */
       section.sponsor {
         padding: 95.98px 0;
       }
-
+      section.sponsor .deals {
+        gap: 13.71px;
+      }
+      section.sponsor .deals > :nth-child(2) > :nth-child(1),
+      section.sponsor .deals > :nth-child(2) > :nth-child(2) {
+        border-color: #cd4631;
+      }
+      section.sponsor .deal {
+        width: 255px;
+      }
+      section.sponsor .deal > :nth-child(1) {
+        padding: 41.13px 27.42px 20.65px;
+        margin-bottom: 13.71px;
+      }
+      section.sponsor .deal :nth-child(1) > p {
+        margin: 13.71px 0 61.83px 0;
+      }
+      section.sponsor .deal > :nth-child(2) {
+        padding: 27.42px 27.42px 65.2px;
+      }
+      section.sponsor .deals :nth-child(1) :nth-child(1) > :nth-child(2) {
+        padding: 2.06px 4.11px;
+      }
+      section.sponsor .deal .price {
+        line-height: 15px;
+      }
+      section.sponsor .deal > :nth-child(2) > :nth-child(2) {
+        margin-top: 13.71px;
+        gap: 6.86px;
+      }
+      /* articles start */
       @media screen and (max-width: 768px) {
         section.features .benefits {
           grid-template-columns: repeat(2, minmax(255px, 1fr));
@@ -323,7 +361,6 @@
         section.about .quote {
           width: 100%;
         }
-
         section.features .benefits {
           grid-template-columns: repeat(1, 255px);
         }
@@ -331,7 +368,7 @@
     </style>
   </head>
   <body>
-    <!-- <nav>
+    <!-- <nav class="z-1">
       <div class="container flex ai-center">
         <div class="logo-spacing">
           <img src="./assets/podcast-logo.png" alt="logo" />
@@ -401,7 +438,7 @@
         </svg>
       </div>
 
-      <div class="header">
+      <div class="header z-1">
         <div class="bg-blur">
           <div class="flex flex-column ai-center">
             <h1 class="text-center bold">
@@ -708,6 +745,111 @@
         <div class="h-content text-center">
           <h2>Become our sponsor</h2>
           <p class="text-lg text-gray">Get exlusive, merch and more</p>
+        </div>
+
+        <div class="deals relative flex wrap jc-center">
+          <div class="deal flex flex-column">
+            <div class="bordered radius-default">
+              <div class="text-xlg bold">Member</div>
+              <p>
+                Lorem ipsum dolor sit amet consectet cing elit, sed do eiusmod
+                tempor.
+              </p>
+
+              <div class="flex ai-center jc-space-between">
+                <button
+                  class="btn-md bg-black radius-default text-white text-sm bold shadow"
+                >
+                  Subscribe
+                </button>
+
+                <div class="price text-lg text-rustred bold">
+                  $9.99 <br /><span class="text-sm text-gray">/month</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex-1 bordered radius-default">
+              <div class="text-sm text-gray bold">What's included:</div>
+              <div class="flex flex-column">
+                <div>&#x2022; Exclusive Content</div>
+                <div>&#x2022; 5% Discount on Merch</div>
+                <div>&#x2022; Join the Community</div>
+                <div>&#x2022; Livestream Access</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="deal flex flex-column">
+            <div class="bordered bg-lbeige radius-default">
+              <div class="flex ai-center jc-space-between">
+                <div class="text-xlg bold">Family</div>
+                <div class="text-xsm text-white bold radius-sm bg-rustred">
+                  MOST POPULAR
+                </div>
+              </div>
+              <p>
+                Lorem ipsum dolor sit amet consectet cing elit, sed do eiusmod
+                tempor.
+              </p>
+
+              <div class="flex ai-center jc-space-between">
+                <button
+                  class="btn-md bg-black radius-default text-white text-sm bold shadow"
+                >
+                  Subscribe
+                </button>
+
+                <div class="price text-lg text-rustred bold">
+                  $14.99 <br /><span class="text-sm text-gray">/month</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex-1 bordered bg-lbeige radius-default">
+              <div class="text-sm text-gray bold">What's included:</div>
+              <div class="flex flex-column">
+                <div class="bold">&#x2022; Everything in Tier 1</div>
+                <div>&#x2022; Free tickets to Events</div>
+                <div>&#x2022; Limited Edition Merch</div>
+                <div>&#x2022; Promote your Product</div>
+                <div>&#x2022; Request Topic</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="deal flex flex-column">
+            <div class="bordered radius-default">
+              <div class="text-xlg bold">Official</div>
+              <p>
+                Lorem ipsum dolor sit amet consectet cing elit, sed do eiusmod
+                tempor.
+              </p>
+
+              <div class="flex ai-center jc-space-between">
+                <button
+                  class="btn-md bg-black radius-default text-white text-sm bold shadow"
+                >
+                  Subscribe
+                </button>
+
+                <div class="price text-lg text-rustred bold">
+                  $29.99 <br /><span class="text-sm text-gray">/month</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex-1 bordered radius-default">
+              <div class="text-sm text-gray bold">What's included:</div>
+              <div class="flex flex-column">
+                <div class="bold">&#x2022; Everything in Tier 2</div>
+                <div>&#x2022; Exclusive Badge on Livestreaming</div>
+                <div>&#x2022; Become an Official Sponsor</div>
+                <div>&#x2022; Early Access to All Episodes</div>
+                <div>&#x2022; Free Stickers and Merch</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
