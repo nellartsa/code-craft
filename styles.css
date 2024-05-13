@@ -16,8 +16,16 @@ a {
   text-wrap: nowrap;
 }
 
+.bordered {
+  border: 1px solid black;
+}
+
 .w-100 {
   width: 100%;
+}
+
+.overflow-auto {
+  overflow: auto;
 }
 
 .overflow-hidden {
@@ -30,6 +38,14 @@ a {
 
 .absolute {
   position: absolute;
+}
+
+.grid {
+  display: grid;
+}
+
+.ji-center {
+  justify-items: center;
 }
 
 .flex {

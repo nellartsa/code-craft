@@ -10,6 +10,10 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="./styles.css" />
     <style>
       body {
@@ -30,6 +34,9 @@
       }
       .text-rustred {
         color: #cd4631;
+      }
+      .text-gray {
+        color: #4d4d4d;
       }
       .text-skyBlue {
         color: #81adc8;
@@ -75,7 +82,7 @@
       }
       /* container */
       .container {
-        /* padding: 0 20px; */
+        /* padding: 0 95px; */
       }
       /* btn size */
       .btn-sm {
@@ -210,13 +217,92 @@
         margin-top: 27.35px;
         gap: 9px;
       }
-      /* testimonials start */
-      section.testimonials {
-        padding: 95.98px 0 68.56px 0;
+      /* testimonials, features, episodes,  */
+      section.testimonials .h-content,
+      section.features .h-content,
+      section.episodes .h-content,
+      section.sponsor .h-content,
+      section.articles .h-content {
+        margin-bottom: 67.91px;
       }
-      section.testimonials .h-content h2 {
+      section.testimonials h2,
+      section.features h2,
+      section.episodes h2,
+      section.sponsor h2,
+      section.articles h2 {
         margin-bottom: 13.71px;
       }
+      /* testimonials start */
+      section.testimonials {
+        padding: 95.98px 0 142.6px 0;
+      }
+      section.testimonials .swiper {
+        height: 100%;
+        width: 100%;
+        overflow-y: visible;
+      }
+      section.testimonials #reviewers > :nth-child(n) {
+        width: 400px !important;
+        padding: 27.42px;
+      }
+      section.testimonials #reviewers p {
+        margin-bottom: 20.98px;
+      }
+      section.testimonials #reviewers .user-con {
+        column-gap: 6.86px;
+      }
+      section.testimonials .swiper-btns {
+        width: 100px;
+        height: 50px;
+        bottom: 0;
+      }
+      section.testimonials .swiper-btns .swiper-button-prev {
+        border: 1px solid black;
+        padding: 20px;
+        left: 0;
+      }
+      section.testimonials .swiper-btns .swiper-button-next {
+        border: 1px solid #cd4631;
+        padding: 20px;
+        right: 0;
+      }
+      section.testimonials .swiper-btns .swiper-button-prev::after,
+      section.testimonials .swiper-btns .swiper-button-next::after {
+        content: "";
+      }
+      /* features start */
+      section.features {
+        padding: 95.98px 0 96.06px;
+      }
+      section.features .benefits {
+        grid-template-columns: repeat(3, minmax(255px, 300px));
+        text-align: center;
+        margin-bottom: 68.14px;
+        row-gap: 50px;
+      }
+      section.features .benefit {
+        width: 251px;
+        column-gap: 13.71px;
+      }
+      section.features .benefit div {
+        margin-top: 20.57px;
+        margin-bottom: 6.86px;
+      }
+      /* episode start */
+      section.episodes {
+        padding: 95.98px 0 96.06px;
+      }
+      /* sponsor start */
+      section.sponsor {
+        padding: 95.98px 0;
+      }
+
+      @media screen and (max-width: 768px) {
+        section.features .benefits {
+          grid-template-columns: repeat(2, minmax(255px, 1fr));
+        }
+      }
+
       @media screen and (max-width: 425px) {
         .container {
           padding: 0 20px;
@@ -237,11 +323,15 @@
         section.about .quote {
           width: 100%;
         }
+
+        section.features .benefits {
+          grid-template-columns: repeat(1, 255px);
+        }
       }
     </style>
   </head>
   <body>
-    <nav>
+    <!-- <nav>
       <div class="container flex ai-center">
         <div class="logo-spacing">
           <img src="./assets/podcast-logo.png" alt="logo" />
@@ -275,7 +365,7 @@
           </div>
         </div>
       </div>
-    </nav>
+    </nav> -->
 
     <section
       class="hero relative bg-lbeige flex flex-column ai-center jc-center overflow-hidden w-100"
@@ -471,16 +561,174 @@
       <div class="container">
         <div class="relative h-content text-center">
           <h2>What our listeners say</h2>
-          <p>Their experience throughout every platform</p>
+          <p class="text-lg text-gray">
+            Their experience throughout every platform
+          </p>
         </div>
+      </div>
 
-        <div id="reviewers"></div>
+      <div class="container swiper">
+        <div id="reviewers" class="swiper-wrapper"></div>
+
+        <div class="absolute swiper-btns">
+          <div class="swiper-button-prev text-black radius-full">
+            <div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+                style="min-width: 20px"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15.75 19.5 8.25 12l7.5-7.5"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="swiper-button-next text-rustred radius-full">
+            <div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+                style="min-width: 20px"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="features"></section>
+    <section class="features">
+      <div class="container flex flex-column ai-center">
+        <div class="relative h-content text-center">
+          <h2>Membership benefits</h2>
+          <p class="text-lg text-gray">
+            Become our sponsor and get all benefits
+          </p>
+        </div>
+
+        <div class="benefits grid ji-center">
+          <div class="benefit">
+            <img src="./assets/benefits-1.png" alt="benefit1" />
+            <div class="text-lg bold">Topic by Request</div>
+            <p>
+              Lorem ipsum dolor sit amet consectet pis cing elit, sed do eiusmod
+              tempor.
+            </p>
+          </div>
+
+          <div class="benefit">
+            <img src="./assets/benefits-2.png" alt="benefit2" />
+            <div class="text-lg bold">Exclusive Content</div>
+            <p>
+              Lorem ipsum dolor sit amet consectet pis cing elit, sed do eiusmod
+              tempor.
+            </p>
+          </div>
+
+          <div class="benefit">
+            <img src="./assets/benefits-3.png" alt="benefit3" />
+            <div class="text-lg bold">Join Community</div>
+            <p>
+              Lorem ipsum dolor sit amet consectet pis cing elit, sed do eiusmod
+              tempor.
+            </p>
+          </div>
+
+          <div class="benefit">
+            <img src="./assets/benefits-4.png" alt="benefit4" />
+            <div class="text-lg bold">Livestreaming Access</div>
+            <p>
+              Lorem ipsum dolor sit amet consectet pis cing elit, sed do eiusmod
+              tempor.
+            </p>
+          </div>
+
+          <div class="benefit">
+            <img src="./assets/benefits-5.png" alt="benefit5" />
+            <div class="text-lg bold">Exclsive Episodes & Merch</div>
+            <p>
+              Lorem ipsum dolor sit amet consectet pis cing elit, sed do eiusmod
+              tempor.
+            </p>
+          </div>
+
+          <div class="benefit">
+            <img src="./assets/benefits-6.png" alt="benefit6" />
+            <div class="text-lg bold">And much more!</div>
+            <p>
+              Lorem ipsum dolor sit amet consectet pis cing elit, sed do eiusmod
+              tempor.
+            </p>
+          </div>
+        </div>
+
+        <button
+          class="btn-md bg-black radius-default text-white text-sm bold shadow"
+        >
+          SEE PRICING
+        </button>
+      </div>
+    </section>
+
+    <section class="episodes bg-lbeige">
+      <div class="container flex flex-column ai-center">
+        <div class="h-content text-center">
+          <h2>Recent Episodes</h2>
+          <p class="text-lg text-gray">Available on your favorite platform</p>
+        </div>
+
+        <div id="episodes flex wrap"></div>
+
+        <button
+          class="btn-md bg-black radius-default text-white text-sm bold shadow"
+        >
+          BROWSE ALL EPISODES
+        </button>
+      </div>
+    </section>
+
+    <section class="sponsor">
+      <div class="container flex flex-column ai-center">
+        <div class="h-content text-center">
+          <h2>Become our sponsor</h2>
+          <p class="text-lg text-gray">Get exlusive, merch and more</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="articles">
+      <div class="container flex flex-column ai-center">
+        <div class="h-content text-center">
+          <h2>Article and News</h2>
+          <p class="text-lg text-gray">News, tips, tricks and more</p>
+        </div>
+
+        <button
+          class="btn-md bg-black radius-default text-white text-sm bold shadow"
+        >
+          BROWSE ALL
+        </button>
+      </div>
+    </section>
   </body>
 
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="./podcast.js"></script>
   <script>
     function createComponent(data) {
@@ -533,6 +781,63 @@
 
     covers.forEach((data) => {
       createComponent(data);
+    });
+
+    function createReviewerCard(data) {
+      const container = document.getElementById("reviewers");
+
+      const component = document.createElement("div");
+      component.classList.add("swiper-slide", "text-center");
+
+      const h1 = document.createElement("h1");
+      h1.classList.add("text-rustred");
+      h1.textContent = "“";
+
+      const paragraph = document.createElement("p");
+      paragraph.textContent = data.review;
+
+      const userCotainer = document.createElement("div");
+      userCotainer.classList.add("flex", "ai-center", "user-con");
+
+      const userImg = document.createElement("img");
+      userImg.classList.add("radius-full");
+      userImg.src = data.avatar;
+      userImg.alt = data.name;
+
+      const name = document.createElement("span");
+      name.textContent = data.name;
+
+      const platformUse = document.createElement("img");
+      platformUse.src = data.platformUrl;
+
+      userCotainer.appendChild(userImg);
+      userCotainer.appendChild(name);
+      userCotainer.appendChild(platformUse);
+
+      component.appendChild(h1);
+      component.appendChild(paragraph);
+      component.appendChild(userCotainer);
+
+      container.appendChild(component);
+    }
+
+    reviewers.forEach((data) => {
+      createReviewerCard(data);
+    });
+
+    const swiper = new Swiper(".swiper", {
+      spaceBetween: 13.71,
+      slidesPerView: "auto",
+      centeredSlides: true,
+
+      pagination: {
+        el: ".swiper-pagination",
+      },
+
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
     });
   </script>
 </html>
