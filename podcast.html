@@ -136,7 +136,7 @@
       }
       section.hero .header {
         padding: 0 20px;
-        width: 500px;
+        max-width: 500px;
       }
       section.hero .springNstar {
         top: 100px;
@@ -176,6 +176,7 @@
       section.hero .supports-con {
         margin-top: 82.27px;
         padding: 31.51px 0;
+        gap: 15px 0;
       }
       section.hero .supports-con::after {
         content: "";
@@ -197,15 +198,14 @@
       }
       section.hero .platform {
         padding: 0 51.76px;
-        column-gap: 92px;
-        row-gap: 10px;
+        gap: 10px 92px;
       }
-      /* quotes start */
+      /* about start */
       section.about {
         padding: 95.98px 0;
       }
       section.about h2 {
-        width: 550px;
+        max-width: 550px;
         padding-bottom: 67.91px;
       }
       section.about .h-content {
@@ -220,7 +220,7 @@
         padding-bottom: 27.42px;
       }
       section.about .quote {
-        width: 80%;
+        max-width: 795px;
         padding: 27.42px 30px;
       }
       section.about .quote-by {
@@ -348,7 +348,7 @@
         gap: 20px;
       }
       section.newsarticles .headlines .headline {
-        width: 370px;
+        max-width: 370px;
         padding: 10.97px;
       }
       section.newsarticles .headline img {
@@ -362,6 +362,14 @@
       }
       section.newsarticles .headline > :nth-child(5) {
         padding-top: 13.71px;
+      }
+      section.newsarticles .headline > :nth-child(5):before {
+        content: "";
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        top: 0;
+        background-color: black;
       }
       section.newsarticles .headline > :nth-child(5) .types {
         gap: 4.11px;
@@ -413,21 +421,8 @@
         .container {
           padding: 0 20px;
         }
-        section.hero .header {
-          width: 100%;
-        }
         section.hero .bg-blur {
           backdrop-filter: blur(2px);
-        }
-        section.hero .supports-con {
-          flex-wrap: wrap;
-          gap: 15px 0;
-        }
-        section.about h2 {
-          width: 100%;
-        }
-        section.about .quote {
-          width: 100%;
         }
       }
     </style>
@@ -568,9 +563,9 @@
       <div id="covers" class="flex"></div>
 
       <div class="container">
-        <div class="supports-con relative flex ai-center jc-center">
+        <div class="supports-con relative flex wrap ai-center jc-center">
           <div class="text-lg bold text-nowrap">Supported by:</div>
-          <div class="platform flex wrap jc-center">
+          <div class="platform flex wrap jc-center jc-space-between">
             <img src="./assets/support-spotify.png" alt="spotify" />
             <img
               src="./assets/support-google-podcast.png"
@@ -927,7 +922,7 @@
         </div>
 
         <div class="headlines flex wrap jc-center">
-          <div class="headline bordered radius-default shadow-dark">
+          <div class="headline bordered radius-default shadow-dark pointer">
             <img class="radius-default w-100" src="./assets/an-1.png" alt="" />
             <div class="text-sm text-gray bold">PODCAST</div>
             <div class="text-xlg text-rustred bold">Setup your own podcast</div>
@@ -937,7 +932,7 @@
               enim ad minimvel iam, quis nostrud exercitation ullamco laboris...
             </p>
 
-            <div class="flex jc-space-between">
+            <div class="flex jc-space-between ai-center relative">
               <div class="types flex">
                 <div class="text-xsm text-gray bordered radius-sm">
                   business
@@ -948,7 +943,7 @@
             </div>
           </div>
 
-          <div class="headline bordered radius-default">
+          <div class="headline bordered radius-default pointer">
             <img class="radius-default w-100" src="./assets/an-2.png" alt="" />
             <div class="text-sm text-gray bold">TIPS & TRICKS</div>
             <div class="text-xlg text-rustred bold">Doodle artwork 101</div>
@@ -958,7 +953,7 @@
               enim ad minimvel iam, quis nostrud exercitation ullamco laboris...
             </p>
 
-            <div class="flex jc-space-between">
+            <div class="flex jc-space-between ai-center relative">
               <div class="types flex">
                 <div class="text-xsm text-gray bordered radius-sm">art</div>
                 <div class="text-xsm text-gray bordered radius-sm">
@@ -1018,6 +1013,10 @@
         </div>
       </div>
     </section>
+
+    <footer class="bg-lgray">
+      <div class="container flex wrap"></div>
+    </footer>
   </body>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
