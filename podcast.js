@@ -53,7 +53,7 @@ const episodes = [
     title: "Are you a Perplexed Mind Person?",
     imgUrl: "./assets/perplexed-mind.png",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac ultrices odio.",
-    type: ["mind-behavior", "health"],
+    types: ["mind-behavior", "health"],
     host: {
       first: "./assets/host-1.png",
       second: "./assets/host-2.png",
@@ -64,7 +64,7 @@ const episodes = [
     title: "Type of Social Classes of People",
     imgUrl: "./assets/social-class.png",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac ultrices odio.",
-    type: ["social class", "wealth"],
+    types: ["social class", "wealth"],
     host: {
       first: "./assets/host-1.png",
       second: "./assets/host-2.png",
@@ -75,7 +75,7 @@ const episodes = [
     title: "How to Deal with Self-Confidence",
     imgUrl: "./assets/self-confidence.png",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac ultrices odio.",
-    type: ["self-esteem", "health"],
+    types: ["self-esteem", "health"],
     host: {
       first: "./assets/host-1.png",
       second: "./assets/host-2.png",
@@ -86,7 +86,7 @@ const episodes = [
     title: "Women's Rights? Is it alright?",
     imgUrl: "./assets/womens-rights.png",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac ultrices odio.",
-    type: ["women's rights"],
+    types: ["women's rights"],
     host: {
       first: "./assets/host-1.png",
       second: "./assets/host-2.png",
@@ -97,7 +97,7 @@ const episodes = [
     title: "Tesla Autopilot Controversy",
     imgUrl: "./assets/tesla-autopilot.png",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac ultrices odio.",
-    type: ["automation", "tech"],
+    types: ["automation", "tech"],
     host: {
       first: "./assets/host-1.png",
       second: "./assets/host-2.png",

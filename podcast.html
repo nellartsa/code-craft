@@ -107,6 +107,9 @@
       .shadow {
         box-shadow: 4.11341px 4.11341px 0px rgba(0, 0, 0, 0.25);
       }
+      .shadow-dark {
+        box-shadow: 6.85569px 6.85569px 0px rgb(0, 0, 0);
+      }
       /* nav start */
       nav {
         position: absolute;
@@ -227,13 +230,17 @@
       /* section mixes  */
       section.testimonials .h-content,
       section.episodes,
-      section.articles {
+      section.articles,
+      section.newsarticles,
+      section.cta {
         padding: 95.98px 0 96.06px;
       }
       section.features .h-content,
       section.episodes .h-content,
       section.sponsor .h-content,
-      section.articles .h-content {
+      section.articles .h-content,
+      section.newsarticles .h-content,
+      section.cta .h-content {
         margin-bottom: 67.91px;
       }
       section.testimonials h2,
@@ -286,16 +293,14 @@
         padding: 95.98px 0 96.06px;
       }
       section.features .benefits {
-        grid-template-columns: repeat(3, minmax(255px, 300px));
-        text-align: center;
+        max-width: 790px;
         margin-bottom: 68.14px;
-        row-gap: 50px;
+        gap: 20px;
       }
       section.features .benefit {
-        width: 251px;
-        column-gap: 13.71px;
+        width: 250px;
       }
-      section.features .benefit div {
+      section.features .benefit .title {
         margin-top: 20.57px;
         margin-bottom: 6.86px;
       }
@@ -335,12 +340,75 @@
         gap: 6.86px;
       }
       /* articles start */
-      @media screen and (max-width: 768px) {
-        section.features .benefits {
-          grid-template-columns: repeat(2, minmax(255px, 1fr));
-        }
+      section.newsarticles .h-content h2 {
+        margin-bottom: 13.71px;
       }
-
+      section.newsarticles .headlines {
+        margin-bottom: 68.56px;
+        gap: 20px;
+      }
+      section.newsarticles .headlines .headline {
+        width: 370px;
+        padding: 10.97px;
+      }
+      section.newsarticles .headline img {
+        margin-bottom: 27.42px;
+      }
+      section.newsarticles .headline > :nth-child(3) {
+        margin: 5px 0 13.71px;
+      }
+      section.newsarticles .headline p {
+        margin-bottom: 18.12px;
+      }
+      section.newsarticles .headline > :nth-child(5) {
+        padding-top: 13.71px;
+      }
+      section.newsarticles .headline > :nth-child(5) .types {
+        gap: 4.11px;
+      }
+      section.newsarticles .headline > :nth-child(5) .types > :nth-child(n) {
+        padding: 4.11px 8.23px;
+      }
+      /* cta start */
+      section.cta .h-content {
+        max-width: 400px;
+      }
+      section.cta .moba-1 {
+        background-image: url("./assets/mobile-1.png");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 800px;
+        width: 400px;
+        bottom: -400px;
+        left: -100px;
+        z-index: -1;
+      }
+      section.cta .moba-2 {
+        background-image: url("./assets/mobile-2.png");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 800px;
+        width: 650px;
+        top: 40px;
+        right: -400px;
+        z-index: -1;
+      }
+      section.cta .h-content span {
+        border-color: #cd4631;
+        padding: 2.06px 4.11px;
+      }
+      section.cta .h-content h2 {
+        margin: 13.79px 0 18.55px;
+      }
+      section.cta button {
+        margin-bottom: 16.54px;
+      }
+      section.cta .available-on > :nth-child(2) {
+        margin-top: 6.86px;
+        gap: 13.71px;
+      }
       @media screen and (max-width: 425px) {
         .container {
           padding: 0 20px;
@@ -360,9 +428,6 @@
         }
         section.about .quote {
           width: 100%;
-        }
-        section.features .benefits {
-          grid-template-columns: repeat(1, 255px);
         }
       }
     </style>
@@ -659,10 +724,10 @@
           </p>
         </div>
 
-        <div class="benefits grid ji-center">
+        <div class="benefits flex wrap ai-center jc-center text-center">
           <div class="benefit">
             <img src="./assets/benefits-1.png" alt="benefit1" />
-            <div class="text-lg bold">Topic by Request</div>
+            <div class="title text-lg bold">Topic by Request</div>
             <p>
               Lorem ipsum dolor sit amet consectet pis cing elit, sed do eiusmod
               tempor.
@@ -671,7 +736,7 @@
 
           <div class="benefit">
             <img src="./assets/benefits-2.png" alt="benefit2" />
-            <div class="text-lg bold">Exclusive Content</div>
+            <div class="title text-lg bold">Exclusive Content</div>
             <p>
               Lorem ipsum dolor sit amet consectet pis cing elit, sed do eiusmod
               tempor.
@@ -680,7 +745,7 @@
 
           <div class="benefit">
             <img src="./assets/benefits-3.png" alt="benefit3" />
-            <div class="text-lg bold">Join Community</div>
+            <div class="title text-lg bold">Join Community</div>
             <p>
               Lorem ipsum dolor sit amet consectet pis cing elit, sed do eiusmod
               tempor.
@@ -689,7 +754,7 @@
 
           <div class="benefit">
             <img src="./assets/benefits-4.png" alt="benefit4" />
-            <div class="text-lg bold">Livestreaming Access</div>
+            <div class="title text-lg bold">Livestreaming Access</div>
             <p>
               Lorem ipsum dolor sit amet consectet pis cing elit, sed do eiusmod
               tempor.
@@ -698,7 +763,7 @@
 
           <div class="benefit">
             <img src="./assets/benefits-5.png" alt="benefit5" />
-            <div class="text-lg bold">Exclsive Episodes & Merch</div>
+            <div class="title text-lg bold">Exclsive Episodes & Merch</div>
             <p>
               Lorem ipsum dolor sit amet consectet pis cing elit, sed do eiusmod
               tempor.
@@ -707,7 +772,7 @@
 
           <div class="benefit">
             <img src="./assets/benefits-6.png" alt="benefit6" />
-            <div class="text-lg bold">And much more!</div>
+            <div class="title text-lg bold">And much more!</div>
             <p>
               Lorem ipsum dolor sit amet consectet pis cing elit, sed do eiusmod
               tempor.
@@ -854,11 +919,58 @@
       </div>
     </section>
 
-    <section class="articles">
+    <section class="newsarticles">
       <div class="container flex flex-column ai-center">
         <div class="h-content text-center">
           <h2>Article and News</h2>
           <p class="text-lg text-gray">News, tips, tricks and more</p>
+        </div>
+
+        <div class="headlines flex wrap jc-center">
+          <div class="headline bordered radius-default shadow-dark">
+            <img class="radius-default w-100" src="./assets/an-1.png" alt="" />
+            <div class="text-sm text-gray bold">PODCAST</div>
+            <div class="text-xlg text-rustred bold">Setup your own podcast</div>
+            <p class="text-sm text-gray">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minimvel iam, quis nostrud exercitation ullamco laboris...
+            </p>
+
+            <div class="flex jc-space-between">
+              <div class="types flex">
+                <div class="text-xsm text-gray bordered radius-sm">
+                  business
+                </div>
+                <div class="text-xsm text-gray bordered radius-sm">startup</div>
+              </div>
+              <div class="text-xsm text-grap bold">Sep 14,2021</div>
+            </div>
+          </div>
+
+          <div class="headline bordered radius-default">
+            <img class="radius-default w-100" src="./assets/an-2.png" alt="" />
+            <div class="text-sm text-gray bold">TIPS & TRICKS</div>
+            <div class="text-xlg text-rustred bold">Doodle artwork 101</div>
+            <p class="text-sm text-gray">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minimvel iam, quis nostrud exercitation ullamco laboris...
+            </p>
+
+            <div class="flex jc-space-between">
+              <div class="types flex">
+                <div class="text-xsm text-gray bordered radius-sm">art</div>
+                <div class="text-xsm text-gray bordered radius-sm">
+                  creative
+                </div>
+                <div class="text-xsm text-gray bordered radius-sm">
+                  tips and trick
+                </div>
+              </div>
+              <div class="text-xsm text-grap bold">Sep 12,2021</div>
+            </div>
+          </div>
         </div>
 
         <button
@@ -866,6 +978,44 @@
         >
           BROWSE ALL
         </button>
+      </div>
+    </section>
+
+    <section class="cta relative overflow-hidden">
+      <div class="absolute moba-1"></div>
+      <div class="absolute moba-2"></div>
+
+      <div class="container flex flex-column jc-center ai-center">
+        <div class="h-content text-center">
+          <span class="text-sm text-rustred bold bordered radius-sm">BETA</span>
+          <h2>Available now Pod of Cast App</h2>
+          <p class="text-lg text-gray">We just launched our podcast app!</p>
+        </div>
+
+        <div class="relative">
+          <button
+            class="btn-md bg-black radius-default text-white text-sm bold shadow"
+          >
+            DOWNLOAD NOW
+          </button>
+          <div class="available-on text-center">
+            <span class="text-sm text-gray">Content also available on:</span>
+            <div class="flex jc-center">
+              <a href="#">
+                <img
+                  src="./assets/google-podcast-black.png"
+                  alt="google podcast"
+                />
+              </a>
+              <a href="#">
+                <img src="./assets/youtube-black.png" alt="youtube" />
+              </a>
+              <a href="#">
+                <img src="./assets/spotify-black.png" alt="spotify" />
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </body>
@@ -914,7 +1064,7 @@
       link.href = "#";
 
       const platformImg = document.createElement("img");
-      platformImg.src = `./assets/platform-${platform}.png`;
+      platformImg.src = `./assets/${platform}-white.png`;
       platformImg.alt = platform;
 
       link.appendChild(platformImg);
