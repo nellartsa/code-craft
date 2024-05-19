@@ -49,58 +49,57 @@ const reviewers = [
 
 const episodes = [
   {
+    id: 1,
     epi: "Eps. 1",
     title: "Are you a Perplexed Mind Person?",
     imgUrl: "./assets/perplexed-mind.png",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac ultrices odio.",
     types: ["mind-behavior", "health"],
-    host: {
-      first: "./assets/host-1.png",
-      second: "./assets/host-2.png",
-    },
+    hosts: ["./assets/host-1.png", "./assets/host-2.png"],
   },
   {
+    id: 2,
     epi: "Eps. 2",
     title: "Type of Social Classes of People",
     imgUrl: "./assets/social-class.png",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac ultrices odio.",
     types: ["social class", "wealth"],
-    host: {
-      first: "./assets/host-1.png",
-      second: "./assets/host-2.png",
-    },
+    hosts: ["./assets/host-1.png", "./assets/host-2.png"],
   },
   {
+    id: 3,
     epi: "Eps. 3",
     title: "How to Deal with Self-Confidence",
     imgUrl: "./assets/self-confidence.png",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac ultrices odio.",
     types: ["self-esteem", "health"],
-    host: {
-      first: "./assets/host-1.png",
-      second: "./assets/host-2.png",
-    },
+    hosts: ["./assets/host-1.png", "./assets/host-2.png"],
   },
   {
+    id: 4,
     epi: "Eps. 4",
     title: "Women's Rights? Is it alright?",
     imgUrl: "./assets/womens-rights.png",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac ultrices odio.",
     types: ["women's rights"],
-    host: {
-      first: "./assets/host-1.png",
-      second: "./assets/host-2.png",
-    },
+    hosts: ["./assets/host-1.png", "./assets/host-2.png"],
   },
   {
+    id: 5,
     epi: "Eps. 5",
     title: "Tesla Autopilot Controversy",
     imgUrl: "./assets/tesla-autopilot.png",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac ultrices odio.",
     types: ["automation", "tech"],
-    host: {
-      first: "./assets/host-1.png",
-      second: "./assets/host-2.png",
-    },
+    hosts: ["./assets/host-1.png", "./assets/host-2.png"],
+  },
+  {
+    id: 6,
+    epi: "Eps. 6",
+    title: "Pandemic Becoming Endemic",
+    imgUrl: "./assets/pandemic.png",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac ultrices odio.",
+    types: ["covid-19", "health"],
+    hosts: ["./assets/host-1.png", "./assets/host-2.png"],
   },
 ];

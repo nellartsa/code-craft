@@ -77,6 +77,9 @@
         border-radius: 100%;
       }
       /* background */
+      .bg-white {
+        background-color: white;
+      }
       .bg-black {
         background-color: black;
       }
@@ -91,7 +94,7 @@
       }
       /* container */
       .container {
-        /* padding: 0 95px; */
+        padding: 0 95.98px;
       }
       /* btn size */
       .btn-sm {
@@ -109,6 +112,10 @@
       }
       .shadow-dark {
         box-shadow: 6.85569px 6.85569px 0px rgb(0, 0, 0);
+      }
+
+      .shadow-blue {
+        box-shadow: 6.85569px 6.85569px 0px #81adc8;
       }
       /* nav start */
       nav {
@@ -134,7 +141,7 @@
       section.hero {
         padding: 100px 0 95.98px 0;
       }
-      section.hero .header {
+      section.hero .h-content {
         padding: 0 20px;
         max-width: 500px;
       }
@@ -178,23 +185,20 @@
         padding: 31.51px 0;
         gap: 15px 0;
       }
+      section.hero .supports-con::before,
       section.hero .supports-con::after {
         content: "";
         position: absolute;
         left: 0;
-        bottom: 0;
         height: 0.5px;
         width: 100%;
         background-color: black;
       }
       section.hero .supports-con::before {
-        content: "";
-        position: absolute;
-        left: 0;
         top: 0;
-        height: 0.5px;
-        width: 100%;
-        background-color: black;
+      }
+      section.hero .supports-con::after {
+        bottom: 0;
       }
       section.hero .platform {
         padding: 0 51.76px;
@@ -297,6 +301,7 @@
         margin-bottom: 68.14px;
         gap: 20px;
       }
+      /* Card - hover */
       section.features .benefit {
         width: 250px;
       }
@@ -305,6 +310,62 @@
         margin-bottom: 6.86px;
       }
       /* episode start */
+      section.episodes #episodes {
+        max-width: 795.71px;
+        gap: 13.71px;
+        margin-bottom: 68.56px;
+      }
+      section.episodes #episodes .episode {
+        width: 390px;
+        padding: 10.97px;
+        gap: 13.71px;
+      }
+      section.episodes #episodes .episode > :nth-child(1) {
+        gap: 13.71px;
+      }
+      section.episodes .episode :nth-child(1) > img {
+        width: 115px;
+      }
+      section.episodes .episode .infos {
+        gap: 2.74px;
+      }
+      section.episodes .episode .infos p {
+        margin-top: 7.54px;
+      }
+      section.episodes .episode .infos p::after {
+        content: "";
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        top: -6.86px;
+        left: 0;
+        background-color: #4d4d4d;
+      }
+      section.episodes .episode :nth-child(2) .category {
+        gap: 4.11px;
+      }
+      section.episodes .episode :nth-child(2) .category :nth-child(n) {
+        border: 1px solid #4d4d4d;
+        padding: 4.11px 8.23px;
+      }
+      section.episodes .episode :nth-child(2) .hosts {
+        gap: 6.86px;
+      }
+      section.episodes .episode :nth-child(2) .hosts > :nth-child(2) {
+        width: 30px;
+      }
+      section.episodes
+        .episode
+        :nth-child(2)
+        .hosts
+        :nth-child(2)
+        :nth-child(2) {
+        position: absolute;
+        padding: 3px;
+        background-color: white;
+        top: -3px;
+        right: -5px;
+      }
       /* sponsor start */
       section.sponsor {
         padding: 95.98px 0;
@@ -390,7 +451,6 @@
         width: 400px;
         bottom: -400px;
         left: -100px;
-        z-index: -1;
       }
       section.cta .moba-2 {
         background-image: url("./assets/mobile-2.png");
@@ -401,7 +461,6 @@
         width: 650px;
         top: 40px;
         right: -400px;
-        z-index: -1;
       }
       section.cta .h-content span {
         border-color: #cd4631;
@@ -417,12 +476,70 @@
         margin-top: 6.86px;
         gap: 13.71px;
       }
-      @media screen and (max-width: 425px) {
+      /* footer start */
+      footer {
+        padding-top: 95.98px;
+        border-top: 1px solid black;
+      }
+      footer .container > :nth-child(1) {
+        gap: 20px 0;
+      }
+      footer .container :nth-child(1) > :nth-child(1) {
+        gap: 20px 80px;
+      }
+      footer .info {
+        max-width: 150px;
+      }
+      footer .info p {
+        margin: 27.42px 0 27.59px 0;
+      }
+      footer .ft-links {
+        max-width: 190px;
+        gap: 10px 60px;
+      }
+      footer .ft-links > :nth-child(n) {
+        gap: 10px 0;
+      }
+      footer .appsNplatforms {
+        /* max-width: 340px; */
+      }
+      footer .appsNplatforms > :nth-child(2) {
+        gap: 26.39px;
+        margin: 19.88px 0 40.96px;
+      }
+      footer .appsNplatforms > :nth-child(2) :nth-child(n) {
+        width: 85px;
+      }
+      footer .appsNplatforms > :nth-child(4) {
+        margin-top: 13.71px;
+      }
+      footer .container > :nth-child(2) {
+        padding: 13.71px 0 10px 0;
+        margin-top: 93.92px;
+      }
+      footer .container > :nth-child(2)::before {
+        content: "";
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        background-color: #4d4d4d;
+        top: 0;
+        left: 0;
+      }
+      @media screen and (max-width: 768px) {
+        footer .appsNplatforms {
+          margin-left: 0;
+        }
+      }
+      @media screen and (max-width: 426px) {
         .container {
           padding: 0 20px;
         }
         section.hero .bg-blur {
           backdrop-filter: blur(2px);
+        }
+        section.episodes #episodes .episode {
+          width: 100%;
         }
       }
     </style>
@@ -467,38 +584,7 @@
     <section
       class="hero relative bg-lbeige flex flex-column ai-center jc-center overflow-hidden w-100"
     >
-      <div class="absolute springNstar">
-        <svg
-          class="spring"
-          width="326"
-          height="311"
-          viewBox="0 0 326 311"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M53.1622 3.55416C53.1622 35.4373 65.4922 89.1988 18.9321 147.316C-26.5457 204.083 36.0194 24.3291 98.8545 13.2034C172.305 0.198037 45.7212 301.331 39.1942 240.047C35.5426 205.761 141.787 25.7998 171.672 55.6848C209.689 93.7022 110 310.854 86.7228 307.282C45.6579 300.982 192.528 51.198 234.202 72.7109C283.895 98.3637 201.987 269.554 163.98 278.736C133.574 286.082 246.978 120.179 322.865 158.149"
-            stroke="black"
-            stroke-width="5.48455"
-            stroke-linecap="round"
-          />
-        </svg>
-        <svg
-          class="absolute star"
-          width="37"
-          height="35"
-          viewBox="0 0 37 35"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M20.8884 0.797057C21.6295 -0.529281 23.6571 0.155175 23.4427 1.65933L23.0478 4.43044C22.9192 5.33288 23.6907 6.10724 24.5936 5.98203L35.367 4.48799C36.8205 4.28642 37.5321 6.20079 36.2998 6.99754L28.2943 12.1738C27.3656 12.7743 27.4933 14.1706 28.5155 14.5926L33.9654 16.8426C35.2182 17.3598 35.041 19.1873 33.7122 19.4542L30.1454 20.1708C29.3396 20.3327 28.8563 21.1622 29.1128 21.9431L30.1249 25.0238C30.5117 26.201 29.2623 27.2467 28.1716 26.6586L23.8224 24.3138C22.7064 23.7122 21.4417 24.8175 21.8885 26.004L24.2807 32.3562C24.7996 33.7343 23.0774 34.8499 22.0319 33.813L15.2699 27.106C14.8339 26.6736 14.1636 26.5837 13.6291 26.8861L6.00622 31.1987C4.73597 31.9174 3.37149 30.4177 4.20655 29.2208L8.69604 22.7859C9.1068 22.1972 8.99389 21.3912 8.43715 20.938L0.609769 14.5662C-0.390876 13.7516 0.185109 12.1317 1.47538 12.1317H7.50564C8.1873 12.1317 8.76545 11.631 8.86274 10.9563L9.80813 4.40049C10.0126 2.9825 11.9808 2.78861 12.4581 4.13945L13.9898 8.47515C14.3828 9.58762 15.9041 9.7172 16.4796 8.68723L20.8884 0.797057Z"
-            fill="#CD4631"
-          />
-        </svg>
-      </div>
-
-      <div class="header z-1">
+      <div class="h-content z-1">
         <div class="bg-blur">
           <div class="flex flex-column ai-center">
             <h1 class="text-center bold">
@@ -518,48 +604,6 @@
         </div>
       </div>
 
-      <div class="absolute star-group">
-        <svg
-          width="26"
-          height="27"
-          viewBox="0 0 26 27"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M9.21911 11.4669C10.2373 10.5838 11.0635 9.58059 11.745 8.50533C11.9734 10.8006 13.6644 12.1864 15.2797 13.0124C14.898 13.2771 14.5432 13.5974 14.2587 13.9743C14.2424 13.9939 14.2258 14.0136 14.2091 14.0336C13.5747 14.7922 12.6608 15.8851 12.2157 17.1874C11.9751 17.8721 11.7544 18.5768 11.5471 19.2826C10.9088 17.8573 9.84566 16.6301 8.3234 15.6756C8.19344 15.5934 8.06077 15.5087 7.92525 15.4222C7.12142 14.9092 6.21739 14.3321 5.1826 13.8413C6.74368 13.2544 8.07922 12.4555 9.21911 11.4669Z"
-            stroke="black"
-            stroke-width="4.11341"
-          />
-        </svg>
-        <svg
-          width="26"
-          height="27"
-          viewBox="0 0 26 27"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M9.21911 11.4669C10.2373 10.5838 11.0635 9.58059 11.745 8.50533C11.9734 10.8006 13.6644 12.1864 15.2797 13.0124C14.898 13.2771 14.5432 13.5974 14.2587 13.9743C14.2424 13.9939 14.2258 14.0136 14.2091 14.0336C13.5747 14.7922 12.6608 15.8851 12.2157 17.1874C11.9751 17.8721 11.7544 18.5768 11.5471 19.2826C10.9088 17.8573 9.84566 16.6301 8.3234 15.6756C8.19344 15.5934 8.06077 15.5087 7.92525 15.4222C7.12142 14.9092 6.21739 14.3321 5.1826 13.8413C6.74368 13.2544 8.07922 12.4555 9.21911 11.4669Z"
-            stroke="black"
-            stroke-width="4.11341"
-          />
-        </svg>
-        <svg
-          width="26"
-          height="27"
-          viewBox="0 0 26 27"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M9.21911 11.4669C10.2373 10.5838 11.0635 9.58059 11.745 8.50533C11.9734 10.8006 13.6644 12.1864 15.2797 13.0124C14.898 13.2771 14.5432 13.5974 14.2587 13.9743C14.2424 13.9939 14.2258 14.0136 14.2091 14.0336C13.5747 14.7922 12.6608 15.8851 12.2157 17.1874C11.9751 17.8721 11.7544 18.5768 11.5471 19.2826C10.9088 17.8573 9.84566 16.6301 8.3234 15.6756C8.19344 15.5934 8.06077 15.5087 7.92525 15.4222C7.12142 14.9092 6.21739 14.3321 5.1826 13.8413C6.74368 13.2544 8.07922 12.4555 9.21911 11.4669Z"
-            stroke="black"
-            stroke-width="4.11341"
-          />
-        </svg>
-      </div>
-
       <div id="covers" class="flex"></div>
 
       <div class="container">
@@ -577,7 +621,7 @@
       </div>
     </section>
 
-    <section class="about">
+    <section class="about bg-white">
       <div class="container flex flex-column ai-center">
         <h2 class="text-center">
           Talk. Listen. Get inspired by every minute of it.
@@ -602,23 +646,6 @@
         </div>
 
         <div class="quote relative bg-lbeige text-center">
-          <div class="absolute spring">
-            <svg
-              width="326"
-              height="311"
-              viewBox="0 0 326 311"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M53.1622 3.55416C53.1622 35.4373 65.4922 89.1988 18.9321 147.316C-26.5457 204.083 36.0194 24.3291 98.8545 13.2034C172.305 0.198037 45.7212 301.331 39.1942 240.047C35.5426 205.761 141.787 25.7998 171.672 55.6848C209.689 93.7022 110 310.854 86.7228 307.282C45.6579 300.982 192.528 51.198 234.202 72.7109C283.895 98.3637 201.987 269.554 163.98 278.736C133.574 286.082 246.978 120.179 322.865 158.149"
-                stroke="black"
-                stroke-width="5.48455"
-                stroke-linecap="round"
-              />
-            </svg>
-          </div>
-
           <h1 class="text-rustred">“</h1>
           <div class="text-xlg bold">
             One of the best daily podcasts that covers every topic on Spotify.
@@ -634,21 +661,6 @@
               <img src="./assets/only-spot.png" alt="spotify logo" />&nbsp;
               <span class="bold">Social Community Manager</span>
             </div>
-          </div>
-
-          <div class="absolute star">
-            <svg
-              width="37"
-              height="35"
-              viewBox="0 0 37 35"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M20.8884 0.797057C21.6295 -0.529281 23.6571 0.155175 23.4427 1.65933L23.0478 4.43044C22.9192 5.33288 23.6907 6.10724 24.5936 5.98203L35.367 4.48799C36.8205 4.28642 37.5321 6.20079 36.2998 6.99754L28.2943 12.1738C27.3656 12.7743 27.4933 14.1706 28.5155 14.5926L33.9654 16.8426C35.2182 17.3598 35.041 19.1873 33.7122 19.4542L30.1454 20.1708C29.3396 20.3327 28.8563 21.1622 29.1128 21.9431L30.1249 25.0238C30.5117 26.201 29.2623 27.2467 28.1716 26.6586L23.8224 24.3138C22.7064 23.7122 21.4417 24.8175 21.8885 26.004L24.2807 32.3562C24.7996 33.7343 23.0774 34.8499 22.0319 33.813L15.2699 27.106C14.8339 26.6736 14.1636 26.5837 13.6291 26.8861L6.00622 31.1987C4.73597 31.9174 3.37149 30.4177 4.20655 29.2208L8.69604 22.7859C9.1068 22.1972 8.99389 21.3912 8.43715 20.938L0.609769 14.5662C-0.390876 13.7516 0.185109 12.1317 1.47538 12.1317H7.50564C8.1873 12.1317 8.76545 11.631 8.86274 10.9563L9.80813 4.40049C10.0126 2.9825 11.9808 2.78861 12.4581 4.13945L13.9898 8.47515C14.3828 9.58762 15.9041 9.7172 16.4796 8.68723L20.8884 0.797057Z"
-                fill="#CD4631"
-              />
-            </svg>
           </div>
         </div>
       </div>
@@ -710,7 +722,7 @@
       </div>
     </section>
 
-    <section class="features">
+    <section class="features bg-white">
       <div class="container flex flex-column ai-center">
         <div class="relative h-content text-center">
           <h2>Membership benefits</h2>
@@ -790,7 +802,7 @@
           <p class="text-lg text-gray">Available on your favorite platform</p>
         </div>
 
-        <div id="episodes flex wrap"></div>
+        <div id="episodes" class="flex wrap jc-center"></div>
 
         <button
           class="btn-md bg-black radius-default text-white text-sm bold shadow"
@@ -800,7 +812,7 @@
       </div>
     </section>
 
-    <section class="sponsor">
+    <section class="sponsor bg-white">
       <div class="container flex flex-column ai-center">
         <div class="h-content text-center">
           <h2>Become our sponsor</h2>
@@ -914,7 +926,7 @@
       </div>
     </section>
 
-    <section class="newsarticles">
+    <section class="newsarticles bg-white">
       <div class="container flex flex-column ai-center">
         <div class="h-content text-center">
           <h2>Article and News</h2>
@@ -939,7 +951,7 @@
                 </div>
                 <div class="text-xsm text-gray bordered radius-sm">startup</div>
               </div>
-              <div class="text-xsm text-grap bold">Sep 14,2021</div>
+              <div class="text-xsm text-gray bold">Sep 14,2021</div>
             </div>
           </div>
 
@@ -963,7 +975,7 @@
                   tips and trick
                 </div>
               </div>
-              <div class="text-xsm text-grap bold">Sep 12,2021</div>
+              <div class="text-xsm text-gray bold">Sep 12,2021</div>
             </div>
           </div>
         </div>
@@ -976,12 +988,12 @@
       </div>
     </section>
 
-    <section class="cta relative overflow-hidden">
+    <section class="cta bg-lgray relative overflow-hidden">
       <div class="absolute moba-1"></div>
       <div class="absolute moba-2"></div>
 
       <div class="container flex flex-column jc-center ai-center">
-        <div class="h-content text-center">
+        <div class="h-content text-center z-1">
           <span class="text-sm text-rustred bold bordered radius-sm">BETA</span>
           <h2>Available now Pod of Cast App</h2>
           <p class="text-lg text-gray">We just launched our podcast app!</p>
@@ -1014,8 +1026,65 @@
       </div>
     </section>
 
-    <footer class="bg-lgray">
-      <div class="container flex wrap"></div>
+    <footer class="bg-white">
+      <div class="container">
+        <div class="flex wrap">
+          <div class="flex wrap jc-space-between">
+            <div class="info">
+              <div class="flex ai-end">
+                <img src="./assets/podcast-logo.png" alt="" />
+                <span class="text-xsm text-gray">2021.</span>
+              </div>
+
+              <p class="text-sm text-gray">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+
+              <div class="socials flex">
+                <img src="./assets/twitter.png" alt="" />
+                <img src="./assets/instagram.png" alt="" />
+                <img src="./assets/tiktok.png" alt="" />
+              </div>
+            </div>
+
+            <div class="ft-links flex wrap">
+              <div class="flex flex-column">
+                <a class="text-gray" href="#">About</a>
+                <a class="text-rustred" href="#">Testimonials</a>
+                <a class="text-gray" href="#">Features</a>
+              </div>
+              <div class="flex flex-column">
+                <a class="text-rustred" href="#">Episodes</a>
+                <a class="text-gray" href="#">Pricing</a>
+                <a class="text-gray" href="#">Blog</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="appsNplatforms ml-auto">
+            <span class="text-gray">Listen episodes on your fav platform:</span>
+            <div class="flex wrap">
+              <img src="./assets/support-google-podcast.png" alt="" />
+              <img src="./assets/support-spotify.png" alt="" />
+              <img src="./assets/support-youtube.png" alt="" />
+            </div>
+
+            <span class="text-gray">App available on:</span>
+            <div class="flex">
+              <img src="./assets/appstore.png" alt="" />
+              <img src="./assets/googleplay.png" alt="" />
+            </div>
+          </div>
+        </div>
+
+        <div class="relative flex jc-space-between text-xsm text-gray">
+          <div>
+            ©2021. All Rights Reserved.
+            <span class="text-rustred">Pod of Cast</span>
+          </div>
+          <div>Terms • Privacy</div>
+        </div>
+      </div>
     </footer>
   </body>
 
@@ -1114,6 +1183,92 @@
 
     reviewers.forEach((data) => {
       createReviewerCard(data);
+    });
+
+    function createEpisodeCard(data) {
+      const container = document.getElementById("episodes");
+      const component = document.createElement("div");
+      component.classList.add(
+        "episode",
+        "flex",
+        "flex-column",
+        "bordered",
+        "radius-lg",
+        "pointer"
+      );
+      const shadowedIid = [2, 3, 6];
+      if (shadowedIid.includes(data.id)) {
+        component.classList.add("shadow-blue");
+      }
+
+      const childContainer1 = document.createElement("div");
+      childContainer1.classList.add("flex");
+
+      const episodeImg = document.createElement("img");
+      episodeImg.classList.add("radius-default");
+      episodeImg.src = data.imgUrl;
+      episodeImg.alt = data.epi;
+
+      const primaryInfoCon = document.createElement("div");
+      primaryInfoCon.classList.add("infos", "flex", "flex-column");
+      const episode = document.createElement("p");
+      episode.classList.add("bold", "text-rustred");
+      episode.textContent = data.epi;
+
+      const title = document.createElement("div");
+      title.classList.add("text-lg", "bold", "text-rustred");
+      title.textContent = data.title;
+
+      const description = document.createElement("p");
+      description.classList.add("relative", "text-sm", "text-gray");
+      description.textContent = data.text;
+
+      primaryInfoCon.appendChild(episode);
+      primaryInfoCon.appendChild(title);
+      primaryInfoCon.appendChild(description);
+
+      childContainer1.appendChild(episodeImg);
+      childContainer1.appendChild(primaryInfoCon);
+
+      const childContainer2 = document.createElement("div");
+      childContainer2.classList.add("flex", "ai-center", "jc-space-between");
+      const typeCon = document.createElement("div");
+      typeCon.classList.add("category", "flex");
+      data.types.forEach((t) => {
+        const type = document.createElement("div");
+        type.classList.add("radius-sm", "text-xsm", "text-gray");
+        type.textContent = t;
+        typeCon.appendChild(type);
+      });
+
+      const hostCon = document.createElement("div");
+      hostCon.classList.add("hosts", "flex", "ai-center");
+      const text = document.createElement("p");
+      text.classList.add("text-xsm", "bold", "text-gray");
+      text.textContent = "Hosted by:";
+      hostCon.appendChild(text);
+
+      const hostImgCon = document.createElement("div");
+      hostImgCon.classList.add("relative");
+      data.hosts.forEach((host) => {
+        const hostImg = document.createElement("img");
+        hostImg.classList.add("radius-full");
+        hostImg.src = host;
+        hostImgCon.appendChild(hostImg);
+      });
+      hostCon.appendChild(hostImgCon);
+
+      childContainer2.appendChild(typeCon);
+      childContainer2.appendChild(hostCon);
+
+      component.appendChild(childContainer1);
+      component.appendChild(childContainer2);
+
+      container.appendChild(component);
+    }
+
+    episodes.reverse().forEach((data) => {
+      createEpisodeCard(data);
     });
 
     const swiper = new Swiper(".swiper", {
