@@ -94,6 +94,8 @@
       }
       /* container */
       .container {
+        margin: auto;
+        max-width: 1024px;
         padding: 0 95.98px;
       }
       /* btn size */
@@ -128,13 +130,13 @@
       nav .container {
         padding: 16px 96px;
       }
-      .logo-spacing {
+      nav .logo-spacing {
         padding-right: 84.33px;
       }
-      .link-group {
+      nav .link-group {
         gap: 41.13px;
       }
-      .link-group-btn {
+      nav .link-group-btn {
         gap: 13.71px;
       }
       /* hero start */
@@ -316,7 +318,7 @@
         margin-bottom: 68.56px;
       }
       section.episodes #episodes .episode {
-        width: 390px;
+        max-width: 390px;
         padding: 10.97px;
         gap: 13.71px;
       }
@@ -325,6 +327,14 @@
       }
       section.episodes .episode :nth-child(1) > img {
         width: 115px;
+      }
+      section.episodes #episodes .episode .platforms {
+        top: 6.86px;
+        right: 6.86px;
+        gap: 5px;
+      }
+      section.episodes #episodes .episode .platforms :nth-child(n) {
+        width: 10px;
       }
       section.episodes .episode .infos {
         gap: 2.74px;
@@ -484,40 +494,35 @@
       footer .container > :nth-child(1) {
         gap: 20px 0;
       }
-      footer .container :nth-child(1) > :nth-child(1) {
-        gap: 20px 80px;
+      footer .container > :nth-child(1) > :nth-child(1) {
+        gap: 20px 50px;
       }
       footer .info {
+        gap: 20px 0;
         max-width: 150px;
-      }
-      footer .info p {
-        margin: 27.42px 0 27.59px 0;
       }
       footer .ft-links {
         max-width: 190px;
-        gap: 10px 60px;
+        gap: 10px 30px;
       }
       footer .ft-links > :nth-child(n) {
         gap: 10px 0;
+        width: 80px;
       }
       footer .appsNplatforms {
-        /* max-width: 340px; */
+        gap: 20px 0;
       }
       footer .appsNplatforms > :nth-child(2) {
         gap: 26.39px;
-        margin: 19.88px 0 40.96px;
       }
       footer .appsNplatforms > :nth-child(2) :nth-child(n) {
         width: 85px;
       }
-      footer .appsNplatforms > :nth-child(4) {
-        margin-top: 13.71px;
-      }
-      footer .container > :nth-child(2) {
+      footer .rights {
         padding: 13.71px 0 10px 0;
         margin-top: 93.92px;
       }
-      footer .container > :nth-child(2)::before {
+      footer .rights::before {
         content: "";
         position: absolute;
         height: 1px;
@@ -527,25 +532,58 @@
         left: 0;
       }
       @media screen and (max-width: 768px) {
-        footer .appsNplatforms {
-          margin-left: 0;
+        nav .logo-spacing {
+          padding-right: 40px;
+        }
+      }
+      @media screen and (max-width: 711px) {
+        .container {
+          padding: 0 50px;
+        }
+        nav .container {
+          padding: 16px 50px;
         }
       }
       @media screen and (max-width: 426px) {
         .container {
           padding: 0 20px;
         }
+        nav .container {
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 20px 0;
+          padding: 16px 20px;
+        }
+        nav .container > :nth-child(2) {
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 20px 0;
+        }
+        nav .logo-spacing {
+          padding: 0;
+        }
+        nav .link-group-btn {
+          margin: 0;
+        }
+        section.hero {
+          padding-top: 200px;
+        }
         section.hero .bg-blur {
           backdrop-filter: blur(2px);
         }
-        section.episodes #episodes .episode {
-          width: 100%;
+      }
+      @media screen and (max-width: 375px) {
+        footer .container > :nth-child(1) {
+          flex-wrap: wrap;
+        }
+        footer .appsNplatforms {
+          margin-left: 0;
         }
       }
     </style>
   </head>
   <body>
-    <!-- <nav class="z-1">
+    <nav class="z-100">
       <div class="container flex ai-center">
         <div class="logo-spacing">
           <img src="./assets/podcast-logo.png" alt="logo" />
@@ -579,7 +617,7 @@
           </div>
         </div>
       </div>
-    </nav> -->
+    </nav>
 
     <section
       class="hero relative bg-lbeige flex flex-column ai-center jc-center overflow-hidden w-100"
@@ -1028,12 +1066,12 @@
 
     <footer class="bg-white">
       <div class="container">
-        <div class="flex wrap">
+        <div class="flex">
           <div class="flex wrap jc-space-between">
-            <div class="info">
+            <div class="flex flex-column info">
               <div class="flex ai-end">
                 <img src="./assets/podcast-logo.png" alt="" />
-                <span class="text-xsm text-gray">2021.</span>
+                <span class="text-xsm text-gray ml-auto">2021.</span>
               </div>
 
               <p class="text-sm text-gray">
@@ -1061,7 +1099,7 @@
             </div>
           </div>
 
-          <div class="appsNplatforms ml-auto">
+          <div class="appsNplatforms flex flex-column ml-auto">
             <span class="text-gray">Listen episodes on your fav platform:</span>
             <div class="flex wrap">
               <img src="./assets/support-google-podcast.png" alt="" />
@@ -1077,7 +1115,7 @@
           </div>
         </div>
 
-        <div class="relative flex jc-space-between text-xsm text-gray">
+        <div class="rights relative flex jc-space-between text-xsm text-gray">
           <div>
             ©2021. All Rights Reserved.
             <span class="text-rustred">Pod of Cast</span>
@@ -1196,18 +1234,31 @@
         "radius-lg",
         "pointer"
       );
-      const shadowedIid = [2, 3, 6];
-      if (shadowedIid.includes(data.id)) {
+      const shadowedId = [2, 3, 6];
+      if (shadowedId.includes(data.id)) {
         component.classList.add("shadow-blue");
       }
 
       const childContainer1 = document.createElement("div");
       childContainer1.classList.add("flex");
 
+      const imgCon = document.createElement("div");
+      imgCon.classList.add("relative");
       const episodeImg = document.createElement("img");
-      episodeImg.classList.add("radius-default");
+      episodeImg.classList.add("relative", "radius-default");
       episodeImg.src = data.imgUrl;
       episodeImg.alt = data.epi;
+
+      const linkContainer = document.createElement("div");
+      linkContainer.classList.add("absolute", "flex", "platforms");
+
+      const platforms = ["spotify", "google-podcast", "youtube"];
+      platforms.forEach((platform) => {
+        const link = createPlatformLink(platform);
+        linkContainer.appendChild(link);
+      });
+      imgCon.appendChild(episodeImg);
+      imgCon.appendChild(linkContainer);
 
       const primaryInfoCon = document.createElement("div");
       primaryInfoCon.classList.add("infos", "flex", "flex-column");
@@ -1227,7 +1278,7 @@
       primaryInfoCon.appendChild(title);
       primaryInfoCon.appendChild(description);
 
-      childContainer1.appendChild(episodeImg);
+      childContainer1.appendChild(imgCon);
       childContainer1.appendChild(primaryInfoCon);
 
       const childContainer2 = document.createElement("div");
