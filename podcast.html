@@ -1129,13 +1129,27 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="./podcast.js"></script>
   <script>
-    function createComponent(data) {
+    const platforms = ["spotify", "google-podcast", "youtube"];
+
+    function createPlatformLink(platform) {
+      const link = document.createElement("a");
+      link.href = "#";
+
+      const platformImg = document.createElement("img");
+      platformImg.src = `./assets/${platform}-white.png`;
+      platformImg.alt = platform;
+
+      link.appendChild(platformImg);
+      return link;
+    }
+
+    function createCover(data) {
       const container = document.getElementById("covers");
 
       const component = document.createElement("div");
       component.classList.add("relative", "radius-lg", "overflow-hidden");
 
-      const image = document.createElement("img");
+      const image = new Image();
       image.src = data.imgUrl;
       image.alt = data.title;
 
@@ -1151,35 +1165,15 @@
 
       const linkContainer = document.createElement("div");
       linkContainer.classList.add("absolute", "flex", "platforms");
+      platforms.forEach((platform) =>
+        linkContainer.appendChild(createPlatformLink(platform))
+      );
 
-      const platforms = ["spotify", "google-podcast", "youtube"];
-      platforms.forEach((platform) => {
-        const link = createPlatformLink(platform);
-        linkContainer.appendChild(link);
-      });
-
-      component.appendChild(image);
-      component.appendChild(title);
-      component.appendChild(linkContainer);
-
+      component.append(image, title, linkContainer);
       container.appendChild(component);
     }
 
-    function createPlatformLink(platform) {
-      const link = document.createElement("a");
-      link.href = "#";
-
-      const platformImg = document.createElement("img");
-      platformImg.src = `./assets/${platform}-white.png`;
-      platformImg.alt = platform;
-
-      link.appendChild(platformImg);
-      return link;
-    }
-
-    covers.forEach((data) => {
-      createComponent(data);
-    });
+    covers.forEach(createCover);
 
     function createReviewerCard(data) {
       const container = document.getElementById("reviewers");
@@ -1194,10 +1188,10 @@
       const paragraph = document.createElement("p");
       paragraph.textContent = data.review;
 
-      const userCotainer = document.createElement("div");
-      userCotainer.classList.add("flex", "ai-center", "user-con");
+      const userContainer = document.createElement("div");
+      userContainer.classList.add("flex", "ai-center", "user-con");
 
-      const userImg = document.createElement("img");
+      const userImg = new Image();
       userImg.classList.add("radius-full");
       userImg.src = data.avatar;
       userImg.alt = data.name;
@@ -1205,26 +1199,19 @@
       const name = document.createElement("span");
       name.textContent = data.name;
 
-      const platformUse = document.createElement("img");
+      const platformUse = new Image();
       platformUse.src = data.platformUrl;
 
-      userCotainer.appendChild(userImg);
-      userCotainer.appendChild(name);
-      userCotainer.appendChild(platformUse);
-
-      component.appendChild(h1);
-      component.appendChild(paragraph);
-      component.appendChild(userCotainer);
-
+      userContainer.append(userImg, name, platformUse);
+      component.append(h1, paragraph, userContainer);
       container.appendChild(component);
     }
 
-    reviewers.forEach((data) => {
-      createReviewerCard(data);
-    });
+    reviewers.forEach(createReviewerCard);
 
     function createEpisodeCard(data) {
       const container = document.getElementById("episodes");
+
       const component = document.createElement("div");
       component.classList.add(
         "episode",
@@ -1234,34 +1221,30 @@
         "radius-lg",
         "pointer"
       );
-      const shadowedId = [2, 3, 6];
-      if (shadowedId.includes(data.id)) {
-        component.classList.add("shadow-blue");
-      }
+      if ([2, 3, 6].includes(data.id)) component.classList.add("shadow-blue");
 
       const childContainer1 = document.createElement("div");
       childContainer1.classList.add("flex");
 
       const imgCon = document.createElement("div");
       imgCon.classList.add("relative");
-      const episodeImg = document.createElement("img");
+
+      const episodeImg = new Image();
       episodeImg.classList.add("relative", "radius-default");
       episodeImg.src = data.imgUrl;
       episodeImg.alt = data.epi;
 
       const linkContainer = document.createElement("div");
       linkContainer.classList.add("absolute", "flex", "platforms");
+      platforms.forEach((platform) =>
+        linkContainer.appendChild(createPlatformLink(platform))
+      );
 
-      const platforms = ["spotify", "google-podcast", "youtube"];
-      platforms.forEach((platform) => {
-        const link = createPlatformLink(platform);
-        linkContainer.appendChild(link);
-      });
-      imgCon.appendChild(episodeImg);
-      imgCon.appendChild(linkContainer);
+      imgCon.append(episodeImg, linkContainer);
 
       const primaryInfoCon = document.createElement("div");
       primaryInfoCon.classList.add("infos", "flex", "flex-column");
+
       const episode = document.createElement("p");
       episode.classList.add("bold", "text-rustred");
       episode.textContent = data.epi;
@@ -1274,15 +1257,12 @@
       description.classList.add("relative", "text-sm", "text-gray");
       description.textContent = data.text;
 
-      primaryInfoCon.appendChild(episode);
-      primaryInfoCon.appendChild(title);
-      primaryInfoCon.appendChild(description);
-
-      childContainer1.appendChild(imgCon);
-      childContainer1.appendChild(primaryInfoCon);
+      primaryInfoCon.append(episode, title, description);
+      childContainer1.append(imgCon, primaryInfoCon);
 
       const childContainer2 = document.createElement("div");
       childContainer2.classList.add("flex", "ai-center", "jc-space-between");
+
       const typeCon = document.createElement("div");
       typeCon.classList.add("category", "flex");
       data.types.forEach((t) => {
@@ -1294,6 +1274,7 @@
 
       const hostCon = document.createElement("div");
       hostCon.classList.add("hosts", "flex", "ai-center");
+
       const text = document.createElement("p");
       text.classList.add("text-xsm", "bold", "text-gray");
       text.textContent = "Hosted by:";
@@ -1302,25 +1283,19 @@
       const hostImgCon = document.createElement("div");
       hostImgCon.classList.add("relative");
       data.hosts.forEach((host) => {
-        const hostImg = document.createElement("img");
+        const hostImg = new Image();
         hostImg.classList.add("radius-full");
         hostImg.src = host;
         hostImgCon.appendChild(hostImg);
       });
       hostCon.appendChild(hostImgCon);
 
-      childContainer2.appendChild(typeCon);
-      childContainer2.appendChild(hostCon);
-
-      component.appendChild(childContainer1);
-      component.appendChild(childContainer2);
-
+      childContainer2.append(typeCon, hostCon);
+      component.append(childContainer1, childContainer2);
       container.appendChild(component);
     }
 
-    episodes.reverse().forEach((data) => {
-      createEpisodeCard(data);
-    });
+    episodes.reverse().forEach(createEpisodeCard);
 
     const swiper = new Swiper(".swiper", {
       spaceBetween: 13.71,
